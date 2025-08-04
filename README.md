@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+# 📦 Koli Kalite Takip Uygulaması  
+**(React.js + Material UI)**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> **This README includes both Turkish and English sections. English version is available below.**  
+> Bu proje, staj sürecinde kullanılan aktif bir sistem örnek alınarak tarafımdan sıfırdan geliştirilmiştir.  
+> Arayüz yapısı örnek alınan sisteme benzese de, kodların tamamı tarafımdan yazılmıştır.
 
-## Available Scripts
+Koli App, bir tekstil fabrikasındaki koli içeriklerinin dijital ortamda takip edilmesini sağlayan bir web uygulamasıdır. Uygulama; ürün okutma, silme, ekleme ve raporlama işlevlerini içermektedir. Kullanıcı arayüzü React.js ile geliştirilmiş, veri iletişimi Swagger API üzerinden sağlanmıştır.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🧱 Proje Mimarisi
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🔧 `pages/` klasöründe 4 ana modül:
+  - Koli İçerik Okutma
+  - Koli İçerik Silme
+  - Koli İçerik Ekleme
+  - Raporlama
+- 🎨 `components/` klasöründe ortak arayüz öğeleri (ör: Sidebar)
+- 🌐 `apiConfig.js` üzerinden Swagger tabanlı API bağlantısı
+- 🎛️ Material UI ile DataGrid, Snackbar ve AppBar gibi bileşenler entegre edildi
+- 📱 Responsive tasarım ve mobil uyumluluk sağlandı
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ⚙️ Temel Özellikler
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### ✅ Koli İçerik Okutma
+- Koli numarası girildiğinde barkod alanına otomatik geçiş
+- Barkod okutulunca SKU bilgisi çekilir
+- Aynı ürün varsa adet artırılır, yoksa tabloya eklenir
+- Snackbar ile hata ve bilgi mesajları
 
-### `npm run build`
+### 🧹 Koli İçerik Silme
+- Mevcut koli içeriği tabloyla görüntülenir
+- Barkod okutularak ürün içerikten çıkarılır
+- Silme işlemi sonrası tablo anlık güncellenir
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### ➕ Koli İçerik Ekleme
+- Mevcut koliye barkodla yeni ürün eklenir
+- Daha önce varsa adet artırılır
+- API’de bulunmayan ürünlerde uyarı gösterilir
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 📊 Raporlama
+- Tüm koliler tablo halinde listelenir
+- Başlangıç ve bitiş tarihi girilerek filtreleme yapılabilir
+- API'den büyük veri çekimi ve gösterimi sağlanır
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🧪 Test & Mobil Uyumluluk
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Grid/Box yapıları ile responsive yapı geliştirildi
+- Küçük ekranlarda tablo ve form görünümü optimize edildi
+- Tüm sayfalarda CRUD işlemleri test edildi
+- Snackbar ile kullanıcı bilgilendirme doğrulandı
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🚀 Kullanılan Teknolojiler
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- React.js (CRA)
+- Material UI (MUI v5)
+- Axios
+- React Hooks (useState, useEffect, useRef)
+- .NET tabanlı REST API (Swagger)
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+> ℹ️ Proje sırasında geliştirilen sayfalara ait ekran görüntüleri `screenshots/` klasöründe yer almaktadır.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# 🇬🇧 Koli Quality Tracking App  
+**(React.js + Material UI)**
 
-### Code Splitting
+> This project was built from scratch by myself, based on a system that was actively used in the company during my internship.  
+> While the UI structure was inspired by the existing tool, the entire codebase was written independently.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This is a React-based web application developed to manage and track the contents of product boxes in a textile factory. It includes 4 main modules: Scan, Delete, Add, and Report. API integration was done using Swagger endpoints.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🔧 Architecture
 
-### Making a Progressive Web App
+- `pages/` folder contains the main modules:
+  - Box Content Scanning
+  - Box Content Deletion
+  - Box Content Addition
+  - Reporting
+- `components/` folder holds reusable UI elements (e.g., Sidebar)
+- API communication handled via `apiConfig.js` and Axios
+- Responsive layout designed with Material UI's Grid and Box
+- Snackbar provides user feedback on every action
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## ✅ Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 📥 Box Scanning
+- Enter box number, focus moves to barcode input automatically
+- Scans barcode and fetches SKU from API
+- If SKU exists, quantity is increased; if not, added to table
+- Realtime feedback via Snackbar
 
-### Deployment
+### 🧹 Box Deletion
+- Displays current contents of the box in a DataGrid
+- Barcode input removes the product from the box
+- Table updates instantly after deletion
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### ➕ Box Addition
+- Allows adding new barcodes into an existing box
+- Increments quantity if already present
+- Handles missing SKUs with error notification
 
-### `npm run build` fails to minify
+### 📊 Reporting
+- Lists all recorded box contents in a table
+- Allows filtering by start/end date
+- Data fetched from backend and shown via MUI DataGrid
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 🧪 Testing & Responsiveness
+
+- Responsive layout with Grid and Box
+- Forms and tables adapted for smaller screens
+- All CRUD operations tested across pages
+- Error cases and API response handling validated
+
+---
+
+> ℹ️ Screenshots of the developed interface pages are available in the `screenshots/` folder.
+
+## 🏁 Run the Project
+
+```bash
+npm install
+npm start
+```
+> ℹ️ To run the project locally, use the commands above.
